@@ -1,0 +1,27 @@
+---
+
+- name: main | Install apt-mirror
+  apt:
+     name=apt-mirror
+
+- name: main | Setup base path
+  file:
+     path="{{ apt_mirror_base_path }}"
+     recurse=yes
+     state="directory"
+     owner=root
+
+- name: main | Configure apt-mirror
+  template:
+     src=mirror.list.j2
+     dest=/etc/apt/mirror.list
+     owner=root
+     mode=0644
+
+- name: main | Cron job
+  cron:
+    name="{{ apt_mirror_bin_path }}"
+    day="{{ apt_mirror_cron_day }}"
+    hour="{{ apt_mirror_cron_hour }}"
+  when: apt_mirror_cron
+
