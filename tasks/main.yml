@@ -20,8 +20,9 @@
 
 - name: main | Cron job
   cron:
-    name="{{ apt_mirror_bin_path }}"
+    name="APT Mirror"
     day="{{ apt_mirror_cron_day }}"
     hour="{{ apt_mirror_cron_hour }}"
+    job="{{ apt_mirror_bin_path }}"
   when: apt_mirror_cron
 
