@@ -7,18 +7,24 @@ apt_mirror_bin_path                     : "/usr/bin/apt-mirror"
 # Cron setup
 apt_mirror_cron                         : True
 apt_mirror_cron_day                     : "*"
-apt_mirror_cron_hour                    : "23/*"
+apt_mirror_cron_hour                    : "23"
 
 # apt_mirror
-apt_mirror_base_path                    : "/mnt/apt-mirror"
+apt_mirror_base_path                    : "/opt/apt-mirror"
 apt_mirror_nthreads                     : 20
 apt_mirror_tilde                        : 0
 
 apt_mirror_repo                         :
-  - "deb http://archive.ubuntu.com/ubuntu precise main restricted universe multiverse"
-  - "deb http://archive.ubuntu.com/ubuntu precise main restricted universe multiverse"
-  - "deb http://archive.ubuntu.com/ubuntu precise-security main restricted universe multiverse"
-  - "deb http://archive.ubuntu.com/ubuntu precise-updates main restricted universe multiverse"
-  - "deb-src http://archive.ubuntu.com/ubuntu precise main restricted universe multiverse"
-  - "deb-src http://archive.ubuntu.com/ubuntu precise-security main restricted universe multiverse"
-  - "deb-src http://archive.ubuntu.com/ubuntu precise-updates main restricted universe multiverse"
+    - "deb http://fr.archive.ubuntu.com/ubuntu/ zesty main"
+    - "deb-src http://fr.archive.ubuntu.com/ubuntu/ zesty main"
+    - "deb http://fr.archive.ubuntu.com/ubuntu/ zesty-security main"
+    - "deb http://fr.archive.ubuntu.com/ubuntu/ zesty-backports main"
+    - "deb-src http://fr.archive.ubuntu.com/ubuntu/ zesty-security main"
+    - "deb-src http://fr.archive.ubuntu.com/ubuntu/ zesty-backports main"
+    - "deb http://fr.archive.ubuntu.com/ubuntu/ xenial main"
+    - "deb-src http://fr.archive.ubuntu.com/ubuntu/ xenial main"
+    - "deb http://fr.archive.ubuntu.com/ubuntu/ xenial-security main"
+    - "deb http://fr.archive.ubuntu.com/ubuntu/ xenial-backports main"
+    - "deb-src http://fr.archive.ubuntu.com/ubuntu/ xenial-security main"
+    - "deb-src http://fr.archive.ubuntu.com/ubuntu/ xenial-backports main"
+
